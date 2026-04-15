@@ -36,7 +36,7 @@
       </div>
       <div id="loginError" class="login-error hidden">Incorrect credentials. Try again.</div>
       <button class="btn-primary full-width" onclick="handleLogin()">Sign In →</button>
-      <p class="login-hint">Demo: any username + password <code>student123</code></p>
+      <p class="login-hint">any username + password <code>student123</code></p>
     </div>
   </div>
 
@@ -71,6 +71,7 @@
         <a href="#notes" class="mob-link" onclick="navTo('notes')">Notes</a>
         <a href="#quiz" class="mob-link" onclick="navTo('quiz')">Quiz</a>
         <a href="#leaderboard" class="mob-link" onclick="navTo('leaderboard')">Leaderboard</a>
+        <button class="btn-outline-sm" onclick="handleLogout()">Logout</button>
       </div>
     </header>
 
@@ -96,7 +97,7 @@
             <button class="btn-primary" onclick="navTo('notes')">Browse Notes →</button>
             <button class="btn-ghost" onclick="navTo('quiz')">Take a Quiz</button>
           </div>
-          <p class="hero-credit">Created by <strong>Alex Morgan</strong> · AcademIQ Platform</p>
+          <p class="hero-credit">Created by <strong>Sujal Kalena</strong> · AcademIQ Platform</p>
         </div>
         <div class="hero-stats">
           <div class="stat-card">
@@ -149,7 +150,7 @@
       <div class="section-inner">
         <div class="section-header">
           <h2 class="section-title">Study Notes</h2>
-          <p class="section-sub">Browse, view, and download notes across subjects</p>
+          <p class="section-sub">view, and download notes across subjects</p>
         </div>
 
         <!-- Upload Panel -->
@@ -253,11 +254,13 @@
         <!-- Subject filter -->
         <div class="filter-bar" style="margin-bottom:2rem">
           <button class="filter-btn active" onclick="renderLeaderboard('all', this)">All Subjects</button>
-          <button class="filter-btn" onclick="renderLeaderboard('Mathematics', this)">Mathematics</button>
-          <button class="filter-btn" onclick="renderLeaderboard('Science', this)">Science</button>
-          <button class="filter-btn" onclick="renderLeaderboard('History', this)">History</button>
+          <button class="filter-btn" onclick="renderLeaderboard('Mathematics', this)">Applied Mathematics</button>
+          <button class="filter-btn" onclick="renderLeaderboard('Science', this)">Engineering Chemistry</button>
+          <button class="filter-btn" onclick="renderLeaderboard('History', this)">Python Programming</button>
+          <button class="filter-btn" onclick="renderLeaderboard('Literature', this)">Environment and Sustainability</button>
+          <button class="filter-btn" onclick="renderLeaderboard('CPD', this)">Contributor Personality Development</button>
         </div>
-
+        
         <div class="podium-row" id="podiumRow"></div>
         <div class="leaderboard-table-wrap">
           <table class="leaderboard-table">
@@ -286,7 +289,7 @@
           <span class="logo-text">AcademIQ</span>
         </div>
         <p class="footer-tagline">Thank you for visiting</p>
-        <p class="footer-credit">Crafted with ♥ by <strong>Alex Morgan</strong> · © 2026 AcademIQ</p>
+        <p class="footer-credit">Crafted with ♥ by <strong>Sujal Kalena</strong> · © 2026 AcademIQ</p>
         <div class="footer-links">
           <a href="#home" onclick="navTo('home')">Home</a>
           <a href="#notes" onclick="navTo('notes')">Notes</a>
