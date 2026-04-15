@@ -11,18 +11,18 @@
 
 
 const PDF_FILES = [
-  "PYTHON-ASSIGNMENT(jerry)-Ch.1.pdf",
-  "PYTHON-ASSIGNMENT(jerry)-Ch.2.pdf",
-  "ENV chap 5.pdf",
+  "PYTHON-ASSIGNMENT(Jerry)-Ch.1.pdf",
+  "PYTHON-ASSIGNMENT(Jerry)-Ch.2.pdf",
+  "ES chap 5.pdf",
   "Environment Q bank.pdf",
   "PYTHON Q BANK.pdf",
-  "EV-CH1.pdf",
-  "EV-CH5.pdf",
-  "EN QUESTION BANK.pdf",
+  "ES-CH1.pdf",
+  "ES-CH5.pdf",
+  "ES QUESTION BANK.pdf",
   "chemistry-ch-1-gujarati-notes.pdf",
   "chemistry-ch-2-gujarati-notes.pdf",
-  "maths_unit-1_matrices-notes.pdf",
-  "maths_unit-5_statistics-notes.pdf",
+  "Maths_unit-1_matrices-notes.pdf",
+  "Maths_unit-5_statistics-notes.pdf",
 ];
 
 
@@ -593,3 +593,4 @@ window.addEventListener('DOMContentLoaded', () => {
     seedLeaderboard(); // seed even before login
   }
 });
+
