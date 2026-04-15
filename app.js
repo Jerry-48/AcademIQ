@@ -593,3 +593,4 @@ window.addEventListener('DOMContentLoaded', () => {
     seedLeaderboard(); // seed even before login
   }
 });
+
