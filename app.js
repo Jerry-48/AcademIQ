@@ -11,7 +11,6 @@
 
 
 const PDF_FILES = [
-  "PYTHON-ASSIGNMENT(Jerry)-Ch.1.pdf",
   "PYTHON-ASSIGNMENT(Jerry)-Ch.2.pdf",
   "ES chap 5.pdf",
   "Environment Q bank.pdf",
