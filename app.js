@@ -11,17 +11,25 @@
 
 
 const PDF_FILES = [
-  "PYTHON-ASSIGNMENT(Jerry)-Ch.2.pdf",
-  "ES chap 5.pdf",
-  "Environment Q bank.pdf",
-  "PYTHON Q BANK.pdf",
-  "ES-CH1.pdf",
-  "ES-CH5.pdf",
-  "ES QUESTION BANK.pdf",
   "chemistry-ch-1-gujarati-notes.pdf",
   "chemistry-ch-2-gujarati-notes.pdf",
+  "ES QUESTION BANK.pdf",
   "Maths_unit-1_matrices-notes.pdf",
   "Maths_unit-5_statistics-notes.pdf",
+  "PY-ASSIGNMENT-1.pdf",
+  "PY-ASSIGNMENT-2.pdf",
+  "PY-ASSIGNMENT-3.pdf",
+  "PY-ASSIGNMENT-4.pdf",
+  "PY-ASSIGNMENT-5.pdf",
+  "PY-GERNAL-EXAMPLE'S.pdf",
+  "PYTHON Q BANK.pdf",
+  "ES-ASSIGNMENT-2.pdf",
+  "ES-ASSIGNMENT-3.pdf",
+  "ES-ASSIGNMENT-4.pdf",
+  "ES-ASSIGNMENT-5.pdf",
+  "Applied_mathematics_tu.1.pdf",
+  "Applied_mathematics_tu.2.pdf",
+  "Applied_mathematics_tu.3.pdf"
 ];
 
 
