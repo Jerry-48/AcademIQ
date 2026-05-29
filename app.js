@@ -188,6 +188,9 @@ document.getElementById('loginUsername').addEventListener('keydown', e => {
 /* ══════════════════════════════════════════════════════
    INIT
 ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════ */
 function initApp() {
   // Check saved session
   const saved = localStorage.getItem('iq_user');
@@ -199,7 +202,7 @@ function initApp() {
   }
 
   seedLeaderboard();
-  renderNotes();
+  renderNotes('all');
   renderQuizSubjects();
   renderLeaderboard('all');
   updateHomeScore();
@@ -247,13 +250,34 @@ function toggleMobileMenu() {
 /* ══════════════════════════════════════════════════════
    NOTES
 ══════════════════════════════════════════════════════ */
-function renderNotes() {
+function renderNotes(filter = 'all') {
   const grid = document.getElementById('notesGrid');
   grid.innerHTML = '';
 
   PDF_FILES.forEach(file => {
     const name = file.replace('.pdf', '');
+    const lowercaseFile = file.toLowerCase();
 
+    // Logic: check filtering tags based on keywords
+    let match = false;
+    if (filter === 'all') {
+      match = true;
+    } else if (filter === 'applied-maths' && (lowercaseFile.includes('maths') || lowercaseFile.includes('mathematics'))) {
+      match = true;
+    } else if (filter === 'chemistry' && lowercaseFile.includes('chemistry')) {
+      match = true;
+    } else if (filter === 'environment' && lowercaseFile.includes('es')) {
+      match = true;
+    } else if (filter === 'python' && (lowercaseFile.includes('py-') || lowercaseFile.includes('python'))) {
+      match = true;
+    } else if (filter === 'cpd' && lowercaseFile.includes('cpd')) {
+      match = true;
+    }
+
+    // Jo file filter criteria match na kare to skip karo
+    if (!match) return;
+
+    // Card Generation
     const card = document.createElement('div');
     card.className = 'note-card';
 
