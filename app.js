@@ -11,8 +11,11 @@
 
 
 const PDF_FILES = [
-  "chemistry-ch-1-gujarati-notes.pdf",
-  "chemistry-ch-2-gujarati-notes.pdf",
+  "#chemistry-ch-1-gujarati-notes.pdf",
+  "#chemistry-ch-2-gujarati-notes.pdf",
+  "#CHEM_summer-2025.pdf",
+  "#CHEM_winter-2024.pdf",
+  "#CHEM_WINTER-2025.pdf",
   "ES QUESTION BANK.pdf",
   "Maths_unit-1_matrices-notes.pdf",
   "Maths_unit-5_statistics-notes.pdf",
@@ -29,7 +32,14 @@ const PDF_FILES = [
   "ES-ASSIGNMENT-5.pdf",
   "Applied_mathematics_tu.1.pdf",
   "Applied_mathematics_tu.2.pdf",
-  "Applied_mathematics_tu.3.pdf"
+  "Applied_mathematics_tu.3.pdf",
+  "PY-G-BOOK.pdf",
+  "ES-S25.pdf",
+  "ES-W25.pdf",
+  "PY-S23.pdf",
+  "PY-S24.pdf",
+  "PY-W25.pdf",
+  "CPD-Old GTU Papers-Up to S-2026.pdf",
 ];
 
 
