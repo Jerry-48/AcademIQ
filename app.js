@@ -274,7 +274,7 @@ function renderNotes(filter = 'all') {
       match = true;
     } else if (filter === 'applied-maths' && (lowercaseFile.includes('maths') || lowercaseFile.includes('mathematics'))) {
       match = true;
-    } else if (filter === 'chemistry' && lowercaseFile.includes('chemistry')) {
+    } else if (filter === 'chemistry' && (lowercaseFile.includes('chemistry') || uppercaseFile.includes('chem'))) {
       match = true;
     } else if (filter === 'environment' && lowercaseFile.includes('es-')) {
       match = true;
