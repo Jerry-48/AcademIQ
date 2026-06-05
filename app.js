@@ -276,7 +276,7 @@ function renderNotes(filter = 'all') {
       match = true;
     } else if (filter === 'chemistry' && lowercaseFile.includes('chemistry')) {
       match = true;
-    } else if (filter === 'environment' && lowercaseFile.includes('es')) {
+    } else if (filter === 'environment' && lowercaseFile.includes('es-')) {
       match = true;
     } else if (filter === 'python' && (lowercaseFile.includes('py-') || lowercaseFile.includes('python'))) {
       match = true;
