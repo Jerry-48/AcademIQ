@@ -13,9 +13,9 @@
 const PDF_FILES = [
   "#chemistry-ch-1-gujarati-notes.pdf",
   "#chemistry-ch-2-gujarati-notes.pdf",
-  "#CHEM_summer-2025.pdf",
-  "#CHEM_winter-2024.pdf",
-  "#CHEM_WINTER-2025.pdf",
+  "#chem_summer-2025.pdf",
+  "#chem_winter-2024.pdf",
+  "#chem_winter-2025.pdf",
   "ES QUESTION BANK.pdf",
   "Maths_unit-1_matrices-notes.pdf",
   "Maths_unit-5_statistics-notes.pdf",
@@ -274,7 +274,7 @@ function renderNotes(filter = 'all') {
       match = true;
     } else if (filter === 'applied-maths' && (lowercaseFile.includes('maths') || lowercaseFile.includes('mathematics'))) {
       match = true;
-    } else if (filter === 'chemistry' && (lowercaseFile.includes('chemistry') || uppercaseFile.includes('chem'))) {
+    } else if (filter === 'chemistry' && lowercaseFile.includes('chem')) {
       match = true;
     } else if (filter === 'environment' && lowercaseFile.includes('es-')) {
       match = true;
