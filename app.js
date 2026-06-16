@@ -49,7 +49,7 @@ const PDF_FILES = [
   "ES-W25.pdf",
   "PY-S23.pdf",
   "PY-S24.pdf",
-  "PY-S25.pdf",
+  "PY-W25.pdf",
   "CPD-Old GTU Papers-Up to S-2026.pdf",
 ];
 
