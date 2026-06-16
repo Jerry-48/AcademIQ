@@ -11,17 +11,46 @@
 
 
 const PDF_FILES = [
-  "PYTHON-ASSIGNMENT(Jerry)-Ch.2.pdf",
-  "ES chap 5.pdf",
-  "Environment Q bank.pdf",
-  "PYTHON Q BANK.pdf",
-  "ES-CH1.pdf",
-  "ES-CH5.pdf",
+  "chemistry-ch-1-notes.pdf",
+  "chemistry-ch-2-notes.pdf",
+  "chemistry-ch-3-notes.pdf",
+  "chemistry-ch-4-notes.pdf",
+  "chemistry-ch-5-notes.pdf",
+  "chemistry-ch-6-notes.pdf",
+  "chemistry-ch-7-notes.pdf",
+  "chem_summer-2024.pdf",
+  "chem_summer-2025.pdf",
+  "chem_winter-2024.pdf",
+  "chem_winter-2025.pdf",
   "ES QUESTION BANK.pdf",
-  "chemistry-ch-1-gujarati-notes.pdf",
-  "chemistry-ch-2-gujarati-notes.pdf",
-  "Maths_unit-1_matrices-notes.pdf",
-  "Maths_unit-5_statistics-notes.pdf",
+  "Applied_mathematics_tu.1.pdf",
+  "Applied_mathematics_tu.2.pdf",
+  "Applied_mathematics_tu.3.pdf",
+  "Applied_mathematics_unit-1-notes.pdf",
+  "Applied_mathematics_unit-2-notes.pdf",
+  "Applied_mathematics_unit-3-notes.pdf",
+  "Applied_mathematics_unit-4-notes.pdf",
+  "Applied_mathematics_unit-5-notes.pdf",
+  "Applied_mathematics_assignments.pdf",
+  "Applied_mathematics_important_methods.pdf",
+  "PY-ASSIGNMENT-1.pdf",
+  "PY-ASSIGNMENT-2.pdf",
+  "PY-ASSIGNMENT-3.pdf",
+  "PY-ASSIGNMENT-4.pdf",
+  "PY-ASSIGNMENT-5.pdf",
+  "PY-GERNAL-EXAMPLE'S.pdf",
+  "PYTHON Q BANK.pdf",
+  "ES-ASSIGNMENT-2.pdf",
+  "ES-ASSIGNMENT-3.pdf",
+  "ES-ASSIGNMENT-4.pdf",
+  "ES-ASSIGNMENT-5.pdf",
+  "PY-G-BOOK.pdf",
+  "ES-S25.pdf",
+  "ES-W25.pdf",
+  "PY-S23.pdf",
+  "PY-S24.pdf",
+  "PY-W25.pdf",
+  "CPD-Old GTU Papers-Up to S-2026.pdf",
 ];
 
 
@@ -180,6 +209,9 @@ document.getElementById('loginUsername').addEventListener('keydown', e => {
 /* ══════════════════════════════════════════════════════
    INIT
 ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════ */
 function initApp() {
   // Check saved session
   const saved = localStorage.getItem('iq_user');
@@ -191,7 +223,7 @@ function initApp() {
   }
 
   seedLeaderboard();
-  renderNotes();
+  renderNotes('all');
   renderQuizSubjects();
   renderLeaderboard('all');
   updateHomeScore();
@@ -239,13 +271,34 @@ function toggleMobileMenu() {
 /* ══════════════════════════════════════════════════════
    NOTES
 ══════════════════════════════════════════════════════ */
-function renderNotes() {
+function renderNotes(filter = 'all') {
   const grid = document.getElementById('notesGrid');
   grid.innerHTML = '';
 
   PDF_FILES.forEach(file => {
     const name = file.replace('.pdf', '');
+    const lowercaseFile = file.toLowerCase();
 
+    // Logic: check filtering tags based on keywords
+    let match = false;
+    if (filter === 'all') {
+      match = true;
+    } else if (filter === 'applied-maths' && (lowercaseFile.includes('maths') || lowercaseFile.includes('mathematics'))) {
+      match = true;
+    } else if (filter === 'chemistry' && lowercaseFile.includes('chem')) {
+      match = true;
+    } else if (filter === 'environment' && lowercaseFile.includes('es-')) {
+      match = true;
+    } else if (filter === 'python' && (lowercaseFile.includes('py-') || lowercaseFile.includes('python'))) {
+      match = true;
+    } else if (filter === 'cpd' && lowercaseFile.includes('cpd')) {
+      match = true;
+    }
+
+    // Jo file filter criteria match na kare to skip karo
+    if (!match) return;
+
+    // Card Generation
     const card = document.createElement('div');
     card.className = 'note-card';
 
@@ -592,4 +645,3 @@ window.addEventListener('DOMContentLoaded', () => {
     seedLeaderboard(); // seed even before login
   }
 });
-
