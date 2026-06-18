@@ -9,7 +9,6 @@
    DATA
 ══════════════════════════════════════════════════════ */
 
-
 const PDF_FILES = [
   "chemistry-ch-1-notes.pdf",
   "chemistry-ch-2-notes.pdf",
@@ -61,9 +60,7 @@ const PDF_FILES = [
   "CPD-Old GTU Papers-Up to S-2026.pdf",
 ];
 
-
-// --- Quiz Data ---
-// --- Updated Quiz Data (4 Subjects, 10 Questions Each) ---
+// --- Quiz Data Array ---
 const QUIZ_DATA = [
   {
     id: 'q-maths',
@@ -72,16 +69,49 @@ const QUIZ_DATA = [
     color: '#f59e0b',
     desc: 'Matrices, Derivatives & Integration',
     questions: [
-      { q: 'એકમ શ્રેણિક (Identity Matrix) I ના વિકર્ણ (Diagonal) ઘટકો કયા હોય છે?', opts: ['0', '1', 'ગમે તે સંખ્યા', '-1'], ans: 1 },
-      { q: 'શ્રેણિક A = [[2, 3], [1, 5]] નો નિશ્ચાયક (Determinant) શોધો.', opts: ['13', '7', '10', '11'], ans: 1 }, // (2*5 - 3*1 = 10-3 = 7)
-      { q: 'Jo y = x^n hoy to dy/dx shu thay?', opts: ['nx^(n-1)', 'x^(n+1)', 'nx^n', '0'], ans: 0 },
-      { q: 'જો A એ 2x3 શ્રેણિક હોય અને B એ 3x2 શ્રેણિક હોય, તો AB શ્રેણિકનો ક્રમ (Order) શું થાય?', opts: ['3x3', '2x2', '3x2', '2x3'], ans: 1 },
-      { q: 'Triangle ma trijo khuno ketlo thashe jo be khuna 60° ane 60° hoy?', opts: ['90°', '60°', '45°', '180°'], ans: 1 },
-      { q: 'sin²θ + cos²θ barabar ketla thay?', opts: ['0', '1', '2', 'tan²θ'], ans: 1 },
-      { q: '2x + 5 = 15 hoy to x ni value shu thashe?', opts: ['10', '5', '20', '2'], ans: 1 },
-      { q: 'Circle no area find karva nu sutra shu chhe?', opts: ['2πr', 'πr²', 'πd', '1/2 bh'], ans: 1 },
-      { q: 'Prime number (Avibhajya sankhya) niche na mathi kai chhe?', opts: ['4', '7', '9', '10'], ans: 1 },
-      { q: 'સિમેટ્રિક શ્રેણિક (Symmetric Matrix) માટે કઈ શરત સાચી છે?', opts: ['A = -A', 'A = Aᵀ', 'A = 0', 'A = I'], ans: 1 }
+      // --- SUMMER 2024 ---
+      { q: 'Order of the matrix [[1,2,3],[-4,5,6]] is =', opts: ['3x2', '2x3', '2x2', '3x3'], ans: 1 },
+      { q: 'If [[x-3, 2],[4, 0]] = [[5, 2],[4, 0]] then x =', opts: ['2', '8', '-8', '0'], ans: 1 },
+      { q: 'The adjoint of [[-3, 2],[0, 1]] =', opts: ['[[-3, 2],[0, 1]]', '[[1, -2],[0, -3]]', '[[3, -2],[0, 1]]', '[[3, 0],[2, -1]]'], ans: 1 },
+      { q: 'For any square matrix A, (A^-1)^-1 =', opts: ['A^-1', 'A', '-A', 'adj(A)'], ans: 1 },
+      { q: 'd/dx (log x) =', opts: ['x', '1/x', 'sin x', 'cos x'], ans: 1 },
+      { q: 'd/dx (tan^-1 x + cot^-1 x) =', opts: ['pi/2', '1', '-1', '0'], ans: 3 },
+      { q: 'If x = a cos(θ), y = a sin(θ) then dy/dx =', opts: ['-cot(θ)', 'sin(θ)', 'sec(θ)', 'cos(θ)'], ans: 0 },
+      { q: '∫ 5x^4 dx = ______ + c', opts: ['x^4', '4x^3', '25x^5', 'x^5'], ans: 3 },
+      { q: '∫₀¹ e^x dx =', opts: ['e - 1', 'e + 1', 'e', '1 - e'], ans: 0 },
+      { q: '∫_{-1}¹ (3x^2 - 2x + 1) dx =', opts: ['0', '2', '4', '6'], ans: 2 },
+      { q: 'The order of differential equation (dy/dx)^2 + 4y = x is', opts: ['0', '2', '4', '1'], ans: 3 },
+      { q: 'The integrating factor of dy/dx + 3y = x is', opts: ['3x', 'e^x', 'e^2x', 'e^3x'], ans: 3 },
+      { q: 'The mean of first ten natural numbers is', opts: ['5.5', '5', '5.4', '6'], ans: 0 },
+      { q: 'The range of the data 17, 15, 25, 34, 32 is', opts: ['32', '17', '15', '19'], ans: 3 },
+
+      // --- WINTER 2024 ---
+      { q: 'Order of the matrix [[1,3,5],[4,6,14]] is', opts: ['2x3', '3x2', '2x2', '3x3'], ans: 0 },
+      { q: 'If A = [[1, 2], [3, 4]] then A^T =', opts: ['[[4, 2], [3, 1]]', '[[1, 3], [2, 4]]', '[[1, 4], [3, 2]]', 'None of these'], ans: 1 },
+      { q: 'If A = [[1, -1], [2, 3]] then adj(A) =', opts: ['[[1, 2], [-1, 1]]', '[[-1, 1], [-2, -3]]', '[[2, 3], [1, -1]]', '[[3, 1], [-2, 1]]'], ans: 3 },
+      { q: '[1, 2, 3] * [[4], [5], [-1]] =', opts: ['5', '3', '11', '-1'], ans: 2 },
+      { q: 'd/dx (x^3 + 1) =', opts: ['3x^2', 'x^2', '3x^2 + 1', 'x^3'], ans: 0 },
+      { q: 'd/dx (sec^2 x - tan^2 x) =', opts: ['1', '0', '3x^2', 'None of these'], ans: 1 },
+      { q: 'int x^2 dx = ______ + C', opts: ['x', 'x^3', '2x', 'x^3 / 3'], ans: 3 },
+      { q: '∫_{-pi/2}^{pi/2} sin x dx =', opts: ['0', '-3', '1', '2*pi'], ans: 0 },
+      { q: '∫₁³ (1/x) dx =', opts: ['-3', 'log x', 'log 3', 'None of these'], ans: 2 },
+      { q: 'Order and Degree of (d^2y/dx^2)^3 + dy/dx + 1 = 0 are', opts: ['2,3', '3,2', '1,3', '2,1'], ans: 0 },
+      { q: 'Integrating Factor of x(dy/dx) + y = 1 is', opts: ['log x', 'x', 'tan x', 'None of these'], ans: 1 },
+      { q: 'If the Mean of 15, 7, 6, a, 3 is 4 then a =', opts: ['10', '21', '-11', '11'], ans: 2 },
+
+      // --- SUMMER 2025 ---
+      { q: '[[1, 2], [3, 4]] + [[1, -1], [1, 3]] =', opts: ['[[1, 2], [3, 12]]', '[[3, 5], [7, 7]]', '[[2, 1], [4, 7]]', 'None of these'], ans: 2 },
+      { q: 'Order of the Matrix [0, -4, 2] is', opts: ['2x2', '1x1', '1x3', '3x1'], ans: 2 },
+      { q: 'If f(x) = e^(4x) then f\'(0) =', opts: ['1', '0', '4', 'e^4'], ans: 2 },
+      { q: 'If y = log(4x + 3) then dy/dx =', opts: ['1/(4x+3)', '3/(4x+3)', '4/(4x+3)', '0'], ans: 2 },
+      { q: 'If y = x^5 then d^5y/dx^5 =', opts: ['120', '120x', '0', '1'], ans: 0 },
+      { q: 'The Mean of First Five even natural numbers is', opts: ['6', '30', '15', '12.5'], ans: 0 },
+
+      // --- WINTER 2025 (DI02000011) ---
+      { q: 'Order of the matrix A = [[1,2],[0,1],[3,4]] is', opts: ['3x2', '2x3', '1x1', '3x3'], ans: 0 },
+      { q: 'For square matrix A and B, (AB)^-1 =', opts: ['I', 'A^-1 * B^-1', 'B^-1 * A^-1', '0'], ans: 2 },
+      { q: 'd/dx (x^3 + e^x + 2) =', opts: ['3x^2 + e^x', '3x^2 + e^x + 1', 'x^2 + e^x', 'x^2 + e^x + 1'], ans: 0 },
+      { q: 'If mean of 7, 9, and x is 10 then x =', opts: ['10', '12', '13', '14'], ans: 1 }
     ]
   },
   {
@@ -124,7 +154,7 @@ const QUIZ_DATA = [
   },
   {
     id: 'q-env',
-    title: 'પયાવરણ અને ટકાઉપણું',
+    title: 'પર્યાવરણ અને ટકાઉપણું',
     icon: '🌍',
     color: '#10b981',
     desc: 'પરિસ્થિતિકી, પ્રદૂષણ અને પુનઃપ્રાપ્ય ઉર્જા વિશે ૧૦ પ્રશ્નો',
@@ -146,7 +176,7 @@ const QUIZ_DATA = [
 // --- Seed Leaderboard ---
 const SEED_SCORES = [
   { username: 'Sujal K.', subject: 'Applied Mathematics', score: 10, total: 10 },
-  { username: 'Bhavin J.', subject: 'Python programming', score: 10, total: 10 },
+  { username: 'Bhavin J.', subject: 'Python Programming', score: 10, total: 10 },
   { username: 'Priya M.', subject: 'Environment and sustainability', score: 8, total: 10 },
   { username: 'Daniel O.', subject: 'Applied Mathematics', score: 7, total: 10 },
   { username: 'Ling C.', subject: 'Environment and sustainability', score: 9, total: 10 },
@@ -162,10 +192,19 @@ const SEED_SCORES = [
 let currentUser = null;
 let currentSection = 'home';
 let currentQuiz = null;
+let activeQuizQuestions = []; // Hold randomized subset of active quiz
 let currentQuestionI = 0;
 let userAnswers = [];
 let answeredCurrent = false;
-let uploadedNotes = [];
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL HELPER FUNCTIONS
+══════════════════════════════════════════════════════ */
+function getRandomQuizQuestions(questionArray, count = 14) {
+  const finalCount = Math.min(count, questionArray.length);
+  const shuffled = [...questionArray].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, finalCount);
+}
 
 /* ══════════════════════════════════════════════════════
    AUTH
@@ -206,22 +245,10 @@ function handleLogout() {
   document.getElementById('loginPassword').value = '';
 }
 
-// Enter key on password field
-document.getElementById('loginPassword').addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleLogin();
-});
-document.getElementById('loginUsername').addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleLogin();
-});
-
 /* ══════════════════════════════════════════════════════
-   INIT
-══════════════════════════════════════════════════════ */
-/* ══════════════════════════════════════════════════════
-   INIT
+   INIT & EVENT LISTENERS
 ══════════════════════════════════════════════════════ */
 function initApp() {
-  // Check saved session
   const saved = localStorage.getItem('iq_user');
   if (saved) {
     currentUser = saved;
@@ -235,36 +262,36 @@ function initApp() {
   renderQuizSubjects();
   renderLeaderboard('all');
   updateHomeScore();
-  setupDragDrop();
 }
+
+document.getElementById('loginPassword').addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleLogin();
+});
+document.getElementById('loginUsername').addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleLogin();
+});
 
 /* ══════════════════════════════════════════════════════
    NAVIGATION
 ══════════════════════════════════════════════════════ */
 function navTo(sectionId) {
-  // Hide all
   document.querySelectorAll('.section').forEach(s => {
     s.classList.add('hidden');
     s.classList.remove('active');
   });
-  // Show target
   const el = document.getElementById(sectionId);
   if (el) {
     el.classList.remove('hidden');
     el.classList.add('active');
   }
-  // Update nav links
   document.querySelectorAll('.nav-link').forEach(l => {
     l.classList.toggle('active', l.dataset.section === sectionId);
   });
   currentSection = sectionId;
-  // Close mobile menu
   document.getElementById('mobileMenu').classList.add('hidden');
-  // Scroll top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Nav links
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -281,13 +308,13 @@ function toggleMobileMenu() {
 ══════════════════════════════════════════════════════ */
 function renderNotes(filter = 'all') {
   const grid = document.getElementById('notesGrid');
+  if (!grid) return;
   grid.innerHTML = '';
 
   PDF_FILES.forEach(file => {
     const name = file.replace('.pdf', '');
     const lowercaseFile = file.toLowerCase();
 
-    // Logic: check filtering tags based on keywords
     let match = false;
     if (filter === 'all') {
       match = true;
@@ -303,13 +330,10 @@ function renderNotes(filter = 'all') {
       match = true;
     }
 
-    // Jo file filter criteria match na kare to skip karo
     if (!match) return;
 
-    // Card Generation
     const card = document.createElement('div');
     card.className = 'note-card';
-
     card.innerHTML = `
       <div class="note-card-top">
         <div class="note-type-icon pdf">📄</div>
@@ -318,13 +342,11 @@ function renderNotes(filter = 'all') {
           <div class="note-meta">PDF File</div>
         </div>
       </div>
-
       <div class="note-actions">
         <button class="note-btn view" onclick="viewPDF('${file}')">👁 View</button>
         <button class="note-btn download" onclick="downloadPDF('${file}')">⬇ Download</button>
       </div>
     `;
-
     grid.appendChild(card);
   });
 }
@@ -341,15 +363,9 @@ function viewPDF(file) {
   const title = document.getElementById('modalTitle');
 
   title.textContent = file;
-
   body.innerHTML = `
-    <iframe src="pdfs/${file}" 
-            width="100%" 
-            height="500px" 
-            style="border:none;">
-    </iframe>
+    <iframe src="pdfs/${file}" width="100%" height="500px" style="border:none;"></iframe>
   `;
-
   modal.classList.remove('hidden');
 }
 
@@ -360,31 +376,18 @@ function downloadPDF(file) {
   a.click();
 }
 
-function closeNoteModal(e) {
-  if (e.target === document.getElementById('noteModal')) {
-    document.getElementById('noteModal').classList.add('hidden');
-  }
-}
 function closeNoteModalBtn() {
   document.getElementById('noteModal').classList.add('hidden');
 }
 
-/* ── File Upload ────────────────────────────────────── */
-
-function showUploadStatus(msg, type) {
-  const el = document.getElementById('uploadStatus');
-  el.textContent = msg;
-  el.className = `upload-status ${type}`;
-  el.classList.remove('hidden');
-  setTimeout(() => el.classList.add('hidden'), 4000);
-}
-
 /* ══════════════════════════════════════════════════════
-   QUIZ
+   QUIZ MAIN IMPLEMENTATION
 ══════════════════════════════════════════════════════ */
 function renderQuizSubjects() {
   const grid = document.getElementById('quizSubjectGrid');
+  if (!grid) return;
   grid.innerHTML = '';
+
   QUIZ_DATA.forEach(quiz => {
     const card = document.createElement('div');
     card.className = 'subject-card';
@@ -392,7 +395,7 @@ function renderQuizSubjects() {
       <div class="subject-card-icon">${quiz.icon}</div>
       <h3>${quiz.title}</h3>
       <p>${quiz.desc}</p>
-      <span class="subject-count">${quiz.questions.length} Questions</span>
+      <span class="subject-count">Random 14 Questions Set</span>
     `;
     card.style.setProperty('--accent', quiz.color);
     card.addEventListener('click', () => startQuiz(quiz.id));
@@ -402,6 +405,10 @@ function renderQuizSubjects() {
 
 function startQuiz(quizId) {
   currentQuiz = QUIZ_DATA.find(q => q.id === quizId);
+
+  // Scramble and load dynamic 14 questions set 
+  activeQuizQuestions = getRandomQuizQuestions(currentQuiz.questions, 14);
+
   currentQuestionI = 0;
   userAnswers = [];
   answeredCurrent = false;
@@ -415,8 +422,8 @@ function startQuiz(quizId) {
 }
 
 function renderQuestion() {
-  const q = currentQuiz.questions[currentQuestionI];
-  const tot = currentQuiz.questions.length;
+  const q = activeQuizQuestions[currentQuestionI];
+  const tot = activeQuizQuestions.length;
 
   document.getElementById('questionNum').textContent = `Question ${currentQuestionI + 1} of ${tot}`;
   document.getElementById('questionText').textContent = q.q;
@@ -444,7 +451,7 @@ function selectAnswer(optIdx) {
   if (answeredCurrent) return;
   answeredCurrent = true;
 
-  const q = currentQuiz.questions[currentQuestionI];
+  const q = activeQuizQuestions[currentQuestionI];
   const correct = q.ans;
   userAnswers.push({ selected: optIdx, correct });
 
@@ -462,7 +469,7 @@ function selectAnswer(optIdx) {
 function nextQuestion() {
   if (!answeredCurrent) return;
   currentQuestionI++;
-  if (currentQuestionI >= currentQuiz.questions.length) {
+  if (currentQuestionI >= activeQuizQuestions.length) {
     showResults();
   } else {
     renderQuestion();
@@ -474,10 +481,9 @@ function showResults() {
   document.getElementById('quizResults').classList.remove('hidden');
 
   const score = userAnswers.filter(a => a.selected === a.correct).length;
-  const total = currentQuiz.questions.length;
+  const total = activeQuizQuestions.length;
   const pct = Math.round((score / total) * 100);
 
-  // Emoji + title
   let icon, title;
   if (pct >= 90) { icon = '🏆'; title = 'Outstanding!'; }
   else if (pct >= 70) { icon = '🎉'; title = 'Great Job!'; }
@@ -490,11 +496,10 @@ function showResults() {
   document.getElementById('scoreDenom').textContent = `/ ${total}`;
   document.getElementById('scorePercent').textContent = `${pct}% Correct`;
 
-  // Breakdown
   const breakdown = document.getElementById('resultsBreakdown');
   breakdown.innerHTML = '';
   userAnswers.forEach((a, i) => {
-    const q = currentQuiz.questions[i];
+    const q = activeQuizQuestions[i];
     const ok = a.selected === a.correct;
     const item = document.createElement('div');
     item.className = `breakdown-item ${ok ? 'correct' : 'wrong'}`;
@@ -503,16 +508,13 @@ function showResults() {
       <div>
         <div class="breakdown-q">${q.q}</div>
         <div class="breakdown-a">
-          ${ok
-        ? `Correct: ${q.opts[a.correct]}`
-        : `Your answer: ${q.opts[a.selected]} · Correct: ${q.opts[a.correct]}`}
+          ${ok ? `Correct: ${q.opts[a.correct]}` : `Your answer: ${q.opts[a.selected]} · Correct: ${q.opts[a.correct]}`}
         </div>
       </div>
     `;
     breakdown.appendChild(item);
   });
 
-  // Save score
   saveScore(score, total);
   updateHomeScore();
   renderLeaderboard('all');
@@ -570,7 +572,6 @@ function renderLeaderboard(filter, btn) {
   }
 
   const scores = JSON.parse(localStorage.getItem('iq_scores') || '[]');
-  // Best score per username+subject
   const bestMap = {};
   scores.forEach(s => {
     const key = s.username + '|' + s.subject;
@@ -580,28 +581,28 @@ function renderLeaderboard(filter, btn) {
   if (filter !== 'all') {
     entries = entries.filter(e => e.subject === filter);
   }
-  // Sort by percentage desc
   entries.sort((a, b) => (b.score / b.total) - (a.score / a.total));
 
-  // Podium (top 3)
   const podiumRow = document.getElementById('podiumRow');
-  podiumRow.innerHTML = '';
-  const medals = ['🥇', '🥈', '🥉'];
-  const classes = ['p1', 'p2', 'p3'];
-  entries.slice(0, 3).forEach((e, i) => {
-    const card = document.createElement('div');
-    card.className = `podium-card ${classes[i]}`;
-    card.innerHTML = `
-      <div class="podium-medal">${medals[i]}</div>
-      <div class="podium-name">${e.username}</div>
-      <div class="podium-score">${e.score}/${e.total}</div>
-      <div class="podium-subject">${e.subject}</div>
-    `;
-    podiumRow.appendChild(card);
-  });
+  if (podiumRow) {
+    podiumRow.innerHTML = '';
+    const medals = ['🥇', '🥈', '🥉'];
+    const classes = ['p1', 'p2', 'p3'];
+    entries.slice(0, 3).forEach((e, i) => {
+      const card = document.createElement('div');
+      card.className = `podium-card ${classes[i]}`;
+      card.innerHTML = `
+        <div class="podium-medal">${medals[i]}</div>
+        <div class="podium-name">${e.username}</div>
+        <div class="podium-score">${e.score}/${e.total}</div>
+        <div class="podium-subject">${e.subject}</div>
+      `;
+      podiumRow.appendChild(card);
+    });
+  }
 
-  // Table
   const tbody = document.getElementById('leaderboardBody');
+  if (!tbody) return;
   tbody.innerHTML = '';
   if (entries.length === 0) {
     tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;color:var(--text-dim);padding:2rem">No scores yet. Take a quiz!</td></tr>`;
@@ -613,7 +614,6 @@ function renderLeaderboard(filter, btn) {
     const rank = i + 1;
     const rClass = rank <= 3 ? `r${rank}` : 'rn';
     const row = document.createElement('tr');
-    // Highlight current user
     if (currentUser && e.username === currentUser) {
       row.style.background = 'rgba(245,158,11,0.05)';
     }
@@ -642,14 +642,5 @@ function renderLeaderboard(filter, btn) {
    BOOT
 ══════════════════════════════════════════════════════ */
 window.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('iq_user');
-  if (saved) {
-    currentUser = saved;
-    document.getElementById('loginOverlay').classList.add('hidden');
-    document.getElementById('app').classList.remove('hidden');
-    document.getElementById('headerUsername').textContent = '👤 ' + saved;
-    initApp();
-  } else {
-    seedLeaderboard(); // seed even before login
-  }
+  initApp();
 });
